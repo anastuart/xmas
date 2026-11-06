@@ -68,7 +68,6 @@
   .choice span:hover{background:var(--tint)}
   .choice input:checked + span{background:var(--red);color:var(--cream);box-shadow:3px 3px 0 var(--red-deep)}
   .choice input:focus-visible + span{outline:3px solid var(--red-deep);outline-offset:2px}
-  .push-right{margin-left:auto}
   .choice.box span::before{content:"";width:15px;height:15px;border:2px solid currentColor;flex:none}
   .choice.box input:checked + span::before{background:var(--cream);box-shadow:inset 0 0 0 3px var(--red)}
 
@@ -77,22 +76,6 @@
   .reveal.open{grid-template-rows:1fr;opacity:1}
   .reveal .inner{padding-top:14px}
 
-  .helper{border:3px solid var(--red);margin:4px 0 26px;background:var(--cream)}
-  .help-head{border:0;margin:0;padding:18px;min-width:0}
-  .help-head legend{float:left;width:100%;padding:0;margin-bottom:12px;font-size:19px}
-  .help-head .choices{clear:both}
-  .help-inner{padding:24px 20px 18px;border-top:3px solid var(--red);background:var(--tint)}
-  .pips{display:grid;grid-template-columns:repeat(10,1fr);gap:6px}
-  .pip{position:relative}
-  .pip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-  .pip span{display:flex;align-items:center;justify-content:center;height:44px;border:2px solid var(--red);background:var(--cream);font-family:var(--display);font-size:20px;cursor:pointer;transition:all .12s}
-  .pip span:hover{background:#fff}
-  .pip input:checked + span{background:var(--red);color:var(--cream);box-shadow:3px 3px 0 var(--red-deep)}
-  .pip input:focus-visible + span{outline:3px solid var(--red-deep);outline-offset:2px}
-  .ends{display:flex;justify-content:space-between;gap:12px;margin-top:7px;font-size:13px;font-weight:600;color:var(--muted)}
-  .ends span:last-child{text-align:right}
-  .q.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .q.two label{display:block;margin-bottom:9px;font-size:19px}
   .section-label{display:flex;align-items:center;gap:16px;margin:40px 0 20px;font-family:var(--script);font-size:46px;line-height:1}
   .section-label::before,.section-label::after{content:"";flex:1;height:3px;background:var(--red)}
   .award{background:var(--tint);padding:22px 22px 4px;margin-bottom:26px;border:2px dashed var(--red)}
@@ -119,9 +102,6 @@
   footer{max-width:1140px;margin:0 auto;padding:40px 32px 56px;display:flex;justify-content:space-between;gap:20px;font-size:20px}
   footer .r{text-align:right}
 
-  .confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
-  .confetti i{position:absolute;top:-20px;width:9px;height:14px;animation:fall linear forwards}
-  @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
 
   @media (max-width:760px){
     .hero{padding:28px 16px 10px}
@@ -138,12 +118,6 @@
     .card{padding:26px 18px 24px;box-shadow:6px 6px 0 var(--red)}
     .award{padding:16px 14px 2px}
     .award .row{grid-template-columns:1fr;gap:0}
-    .q.two{grid-template-columns:1fr;gap:20px}
-    .help-inner{padding:20px 14px 14px}
-    .pips{gap:4px}
-    .pip span{height:40px;font-size:17px}
-    .help-head{padding:16px 14px}
-    .help-head legend{font-size:17px}
     .section-label{font-size:40px}
     .choice span{padding:10px 14px;font-size:14px}
     footer{padding:30px 16px 44px;font-size:16px}
@@ -216,53 +190,6 @@
           <label class="caps" for="drinks">Drink preferences &amp; requests</label>
           <input type="text" id="drinks" name="drinks">
         </div>
-
-        <div class="helper">
-          <fieldset class="help-head">
-            <legend class="caps">Keen to help with food &amp; drinks?</legend>
-            <div class="choices">
-              <label class="choice"><input type="radio" name="helping" value="Yes please"><span>Yes please</span></label>
-              <label class="choice"><input type="radio" name="helping" value="No thank u"><span>No thank u</span></label>
-            </div>
-          </fieldset>
-          <div class="reveal" id="helpBits"><div><div class="help-inner">
-            <fieldset class="q scale">
-              <legend class="caps">Desire to help with food</legend>
-              <div class="pips"><label class="pip"><input type="radio" name="help_food" value="1"><span>1</span></label><label class="pip"><input type="radio" name="help_food" value="2"><span>2</span></label><label class="pip"><input type="radio" name="help_food" value="3"><span>3</span></label><label class="pip"><input type="radio" name="help_food" value="4"><span>4</span></label><label class="pip"><input type="radio" name="help_food" value="5"><span>5</span></label><label class="pip"><input type="radio" name="help_food" value="6"><span>6</span></label><label class="pip"><input type="radio" name="help_food" value="7"><span>7</span></label><label class="pip"><input type="radio" name="help_food" value="8"><span>8</span></label><label class="pip"><input type="radio" name="help_food" value="9"><span>9</span></label><label class="pip"><input type="radio" name="help_food" value="10"><span>10</span></label></div>
-              <div class="ends"><span>1 · I'll just eat it</span><span>10 · Put me on the menu</span></div>
-            </fieldset>
-            <fieldset class="q scale">
-              <legend class="caps">Desire to help with drinks</legend>
-              <div class="pips"><label class="pip"><input type="radio" name="help_drinks" value="1"><span>1</span></label><label class="pip"><input type="radio" name="help_drinks" value="2"><span>2</span></label><label class="pip"><input type="radio" name="help_drinks" value="3"><span>3</span></label><label class="pip"><input type="radio" name="help_drinks" value="4"><span>4</span></label><label class="pip"><input type="radio" name="help_drinks" value="5"><span>5</span></label><label class="pip"><input type="radio" name="help_drinks" value="6"><span>6</span></label><label class="pip"><input type="radio" name="help_drinks" value="7"><span>7</span></label><label class="pip"><input type="radio" name="help_drinks" value="8"><span>8</span></label><label class="pip"><input type="radio" name="help_drinks" value="9"><span>9</span></label><label class="pip"><input type="radio" name="help_drinks" value="10"><span>10</span></label></div>
-              <div class="ends"><span>1 · I'll just drink it</span><span>10 · I'm the bartender</span></div>
-            </fieldset>
-            <fieldset class="q scale">
-              <legend class="caps">Cooking ability</legend>
-              <div class="pips"><label class="pip"><input type="radio" name="cooking" value="1"><span>1</span></label><label class="pip"><input type="radio" name="cooking" value="2"><span>2</span></label><label class="pip"><input type="radio" name="cooking" value="3"><span>3</span></label><label class="pip"><input type="radio" name="cooking" value="4"><span>4</span></label><label class="pip"><input type="radio" name="cooking" value="5"><span>5</span></label><label class="pip"><input type="radio" name="cooking" value="6"><span>6</span></label><label class="pip"><input type="radio" name="cooking" value="7"><span>7</span></label><label class="pip"><input type="radio" name="cooking" value="8"><span>8</span></label><label class="pip"><input type="radio" name="cooking" value="9"><span>9</span></label><label class="pip"><input type="radio" name="cooking" value="10"><span>10</span></label></div>
-              <div class="ends"><span>1 · Ana circa 2025</span><span>10 · Chef's kiss</span></div>
-            </fieldset>
-            <div class="q">
-              <label class="caps" for="signature">Signature dish or drink</label>
-              <input type="text" id="signature" name="signature">
-            </div>
-            <div class="q two">
-              <div>
-                <label class="caps" for="strengths">Kitchen strengths</label>
-                <textarea id="strengths" name="strengths"></textarea>
-              </div>
-              <div>
-                <label class="caps" for="weaknesses">Kitchen weaknesses</label>
-                <textarea id="weaknesses" name="weaknesses"></textarea>
-              </div>
-            </div>
-            <div class="q" style="margin-bottom:4px">
-              <div class="choices">
-                <label class="choice box"><input type="checkbox" name="early" value="Yes"><span>Happy to arrive early to help prep</span></label>
-                <label class="choice box push-right"><input type="checkbox" name="bring_own" value="Yes"><span>I'll bring it myself</span></label>
-              </div>
-            </div>
-          </div></div></div>
-        </div>
       </div></div></div>
 
       <div class="section-label">the important stuff</div>
@@ -305,11 +232,6 @@
         <textarea id="requests" name="requests"></textarea>
       </div>
 
-      <div class="q">
-        <label class="caps" for="misc">Anything else?</label>
-        <textarea id="misc" name="misc"></textarea>
-      </div>
-
       <div class="submit-row">
         <button class="btn" type="submit" id="submitBtn">Send my RSVP</button>
         <div class="err" id="err" role="alert"></div>
@@ -329,6 +251,7 @@
   <div class="r">Sat 12 Dec · 11am<br>2 Malo Rd, Whale Beach</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 <script>
 /* ============================================================
    FORMSPREE endpoint. Set this to '' to switch back to preview mode
@@ -339,32 +262,24 @@ const FORMSPREE_URL = 'https://formspree.io/f/xkjjzplg';
 /* How each answer is labelled in your email and CSV export */
 const LABELS = {
   name: 'Guests', attending: 'Attending', stay: 'How long', dietary: 'Dietary requirements',
-  drinks: 'Drink preferences & requests', helping: 'Keen to help with food & drinks',
-  help_food: 'Desire to help with food (1-10)', help_drinks: 'Desire to help with drinks (1-10)',
-  cooking: 'Cooking ability (1-10)', signature: 'Signature dish or drink',
-  strengths: 'Kitchen strengths', weaknesses: 'Kitchen weaknesses',
-  early: 'Happy to arrive early to help prep', bring_own: "I'll bring it myself",
+  drinks: 'Drink preferences & requests',
   skills: 'Special skills', achievement: 'Achievement of the year',
   nominee: 'Award nominee', award: 'Award', reason: 'Area of demonstrated excellence',
-  song: 'Favourite Christmas song', requests: 'Requests', misc: 'Anything else'
+  song: 'Favourite Christmas song', requests: 'Requests'
 };
 
 const form = document.getElementById('rsvpForm');
 const coming = document.getElementById('comingBits');
-const help = document.getElementById('helpBits');
 const err = document.getElementById('err');
 const btn = document.getElementById('submitBtn');
 const thanks = document.getElementById('thanks');
 
 form.addEventListener('change', e => {
-  if (e.target.name === 'attending') coming.classList.toggle('open', e.target.value !== 'No');
-  if (e.target.name === 'helping') help.classList.toggle('open', e.target.value === 'Yes please');
+  if (e.target.name === 'attending') {
+    coming.classList.toggle('open', e.target.value !== 'No');
+    if (e.target.value === 'Yes') burstFrom(e.target.closest('.choice'));
+  }
   err.textContent = '';
-});
-
-document.querySelectorAll('.pip input').forEach(r => {
-  r.addEventListener('pointerdown', () => { r.dataset.was = r.checked ? '1' : ''; });
-  r.addEventListener('click', () => { if (r.dataset.was) { r.checked = false; r.dataset.was = ''; } });
 });
 
 form.addEventListener('submit', async e => {
@@ -377,13 +292,11 @@ form.addEventListener('submit', async e => {
   if (!attending) { err.textContent = 'Let us know if you can make it.'; return; }
 
   const answers = {};
-  const helpOnly = ['help_food','help_drinks','cooking','signature','strengths','weaknesses','early','bring_own'];
-  const comingOnly = ['stay','dietary','drinks','helping', ...helpOnly];
-  ['name','attending','stay','dietary','drinks','helping', ...helpOnly,
-   'skills','achievement','nominee','award','reason','song','requests','misc']
+  const comingOnly = ['stay','dietary','drinks'];
+  ['name','attending','stay','dietary','drinks',
+   'skills','achievement','nominee','award','reason','song','requests']
     .forEach(f => answers[f] = (fd.get(f) || '').toString().trim());
   if (attending === 'No') comingOnly.forEach(f => answers[f] = '');
-  else if (answers.helping !== 'Yes please') helpOnly.forEach(f => answers[f] = '');
 
   const label = { Yes: 'Coming', Maybe: 'Maybe', No: "Can't make it" }[attending];
   const payload = { _subject: `Friendsmas RSVP: ${name} (${label})` };
@@ -406,6 +319,7 @@ form.addEventListener('submit', async e => {
       await new Promise(r => setTimeout(r, 700));
       console.info('Preview mode, not sent: ' + JSON.stringify(payload));
     }
+    celebrate();
     showThanks(name, attending);
   } catch (x) {
     console.error(x);
@@ -419,29 +333,43 @@ function showThanks(who, attending){
   const t = document.getElementById('thanksTitle'), m = document.getElementById('thanksMsg');
   if (attending === 'No') { t.textContent = 'You’ll be missed'; m.textContent = `Thanks for letting us know, ${who}. Your nominations still count.`; }
   else if (attending === 'Maybe') { t.textContent = 'Fingers crossed'; m.textContent = `Got it, ${who}. Send another response once you know for sure.`; }
-  else { t.textContent = 'See you there!'; m.textContent = `You're on the list, ${who}. Pack your swimmers.`; confetti(); }
+  else { t.textContent = 'See you there!'; m.textContent = `You're on the list, ${who}. Pack your swimmers.`; }
   form.style.display = 'none'; thanks.classList.add('show');
   thanks.scrollIntoView({behavior:'smooth', block:'center'});
 }
 
 document.getElementById('again').addEventListener('click', () => {
-  form.reset(); coming.classList.remove('open'); help.classList.remove('open');
+  form.reset(); coming.classList.remove('open');
   thanks.classList.remove('show'); form.style.display = '';
 });
 
-function confetti(){
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const box = document.createElement('div'); box.className = 'confetti';
-  const cols = ['#D04731','#A8331F','#F3E6CF','#E9907E'];
-  for (let i = 0; i < 90; i++) {
-    const p = document.createElement('i');
-    p.style.left = Math.random()*100 + 'vw';
-    p.style.background = cols[i % cols.length];
-    p.style.animationDuration = (2.2 + Math.random()*1.8) + 's';
-    p.style.animationDelay = (Math.random()*.6) + 's';
-    box.appendChild(p);
-  }
-  document.body.appendChild(box); setTimeout(() => box.remove(), 4800);
+function burstFrom(el){
+  if (typeof confetti !== 'function' || !el) return;
+  const r = el.getBoundingClientRect();
+  const origin = { x: (r.left + r.width / 2) / innerWidth, y: (r.top + r.height / 2) / innerHeight };
+  const opts = { origin, zIndex: 100, colors: ['#D04731', '#A8331F', '#F3E6CF', '#E9907E', '#FAFAEC'], disableForReducedMotion: true };
+  confetti(Object.assign({}, opts, { particleCount: 80, spread: 70, startVelocity: 38 }));
+  confetti(Object.assign({}, opts, { particleCount: 40, spread: 120, startVelocity: 25, scalar: 0.8 }));
+}
+
+function celebrate(){
+  if (typeof confetti !== 'function') return;          // library didn't load: skip quietly
+  const duration = 2 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = {
+    startVelocity: 30, spread: 360, ticks: 60, zIndex: 100,
+    colors: ['#D04731', '#A8331F', '#F3E6CF', '#E9907E', '#FAFAEC'],
+    disableForReducedMotion: true
+  };
+  const randomInRange = (min, max) => Math.random() * (max - min) + min;
+  const interval = setInterval(() => {
+    const timeLeft = animationEnd - Date.now();
+    if (timeLeft <= 0) return clearInterval(interval);
+    const particleCount = 50 * (timeLeft / duration);
+    // particles fall, so start a bit above a random height
+    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+  }, 250);
 }
 </script>
 </body>
